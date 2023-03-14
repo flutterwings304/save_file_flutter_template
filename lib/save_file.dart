@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -34,11 +35,13 @@ class FileStorage {
     return directory;
   }
 
-static Future<File> writeCounter(String bytes,String name) async {
+static Future<File> writeCounter(String bytes,String name,BuildContext context) async {
   final path = await _localPath;
     //Create a file for the path of device and file name with extension
-    File file= File('$path/$name');;
+    File file= File('$path/$name');
 print("Save file");
+ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("File Saved Successfully")));
+
     //Write the data in the file you have created
     return file.writeAsString(bytes);
   }
