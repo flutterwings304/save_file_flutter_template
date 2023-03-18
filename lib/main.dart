@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+
 import 'package:save_file_flutter_template/constant.dart';
 import 'package:save_file_flutter_template/save_file.dart';
 
@@ -42,7 +43,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-   
+   int endTime = DateTime.now().millisecondsSinceEpoch + 1000 * 30;
+
     return Scaffold(
       appBar: AppBar(
       
